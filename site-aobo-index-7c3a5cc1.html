@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>欧博 · 生活指南与访问备忘</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f1f3f6;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.7;
+      color: #2e2e2e;
+      padding: 2rem 1.5rem;
+    }
+
+    .page {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    /* hero 横幅 */
+    .hero {
+      background: linear-gradient(145deg, #ffffff 0%, #f7f9fc 100%);
+      border-radius: 28px;
+      padding: 3.2rem 2.5rem;
+      margin-bottom: 2.8rem;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03), 0 2px 6px rgba(0, 0, 0, 0.02);
+      border: 1px solid #e5e9f0;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      color: #1f2a3a;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero .sub {
+      font-size: 1.05rem;
+      color: #55657a;
+      max-width: 560px;
+      margin: 0 auto;
+      border-top: 1px solid #dce1e9;
+      padding-top: 0.9rem;
+    }
+
+    /* 背景卡片说明 */
+    .background-card {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 2rem 2.2rem;
+      margin-bottom: 2.8rem;
+      border: 1px solid #e2e7ef;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+    }
+
+    .background-card h2 {
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: #1f2a3a;
+      margin-bottom: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .background-card h2::before {
+      content: "⊡";
+      font-weight: 300;
+      color: #708090;
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+
+    .background-card p {
+      margin-bottom: 1rem;
+      color: #3a4457;
+    }
+
+    .background-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* 三段自然介绍：用卡片网格 */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.8rem;
+      margin-bottom: 2.8rem;
+    }
+
+    .feature-card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 1.8rem 1.8rem 2rem;
+      border: 1px solid #e2e7ef;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.02);
+      transition: box-shadow 0.2s;
+    }
+
+    .feature-card:hover {
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+    }
+
+    .feature-card h3 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #1f2a3a;
+      margin-bottom: 0.6rem;
+      border-left: 4px solid #bcc6d4;
+      padding-left: 0.8rem;
+    }
+
+    .feature-card p {
+      color: #3d4a5e;
+      font-size: 0.96rem;
+    }
+
+    .feature-card .tag {
+      display: inline-block;
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      background: #eef1f7;
+      color: #3d4a5e;
+      padding: 0.25rem 0.9rem;
+      border-radius: 40px;
+      letter-spacing: 0.02em;
+    }
+
+    /* FAQ 摘要 (不要太多) */
+    .faq-summary {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 2rem 2.2rem;
+      margin-bottom: 2.8rem;
+      border: 1px solid #e2e7ef;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+    }
+
+    .faq-summary h2 {
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: #1f2a3a;
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .faq-summary h2::before {
+      content: "?";
+      font-weight: 400;
+      color: #708090;
+      font-size: 1.4rem;
+    }
+
+    .faq-item {
+      margin-bottom: 1rem;
+    }
+
+    .faq-item strong {
+      display: block;
+      font-weight: 500;
+      color: #1f2a3a;
+      margin-bottom: 0.2rem;
+    }
+
+    .faq-item p {
+      color: #3d4a5e;
+      margin-left: 0.2rem;
+    }
+
+    /* 页尾访问提示 */
+    .footer-access {
+      background: #ffffff;
+      border-radius: 28px;
+      padding: 2.2rem 2.5rem;
+      border: 1px solid #e2e7ef;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.02);
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .footer-access p {
+      color: #3d4a5e;
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .footer-access .big-link-sentence {
+      font-size: 1.2rem;
+      margin-top: 0.6rem;
+    }
+
+    .footer-access a {
+      color: #1f2a3a;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 2px solid #d0d7e2;
+      transition: border-color 0.2s, color 0.15s;
+    }
+
+    .footer-access a:hover {
+      border-bottom-color: #1f2a3a;
+      color: #0f1729;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #dce1e9;
+      margin: 0.8rem 0 1.4rem 0;
+      opacity: 0.5;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 1.2rem 0.8rem;
+      }
+      .hero {
+        padding: 2rem 1.2rem;
+      }
+      .hero h1 {
+        font-size: 1.7rem;
+      }
+      .background-card,
+      .faq-summary,
+      .footer-access {
+        padding: 1.4rem 1.2rem;
+      }
+      .feature-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- hero 横幅 -->
+    <div class="hero">
+      <h1>一份关于欧博的日常备忘</h1>
+      <div class="sub">从了解到达 — 没有复杂路径，只有几步熟悉</div>
+    </div>
+
+    <!-- 背景说明 -->
+    <div class="background-card">
+      <h2>背景与初衷</h2>
+      <p>很多朋友第一次听说「欧博」这个名字时，会好奇它究竟代表什么。简单来说，它是一个提供特定信息与服务的线上站点，覆盖日常查询、资源索引与基础工具。近两年逐渐被更多人留意到，因为它界面清爽、分类直接，没有多余的干扰项。</p>
+      <p>这份页面是一份生活向的指南，没有广告或推销，只希望帮你理清脉络：欧博适合什么场景、怎样最便利地找到它，以及一些容易被忽略的小提醒。内容全部基于公开信息与一般使用经验，真实且克制。</p>
+    </div>
+
+    <!-- 三段自然介绍 -->
+    <div class="feature-grid">
+      <div class="feature-card">
+        <h3>日常使用场景</h3>
+        <p>无论是快速检索某个主题，还是翻阅整理好的分类列表，欧博的布局都偏向实用主义。不需要注册或下载额外软件，打开浏览器就能开始。尤其适合在碎片时间里完成一次简单的信息核对。</p>
+        <span class="tag">轻量 · 直接</span>
+      </div>
+      <div class="feature-card">
+        <h3>特点与结构</h3>
+        <p>没有弹窗、没有自动播放的媒体，页面重心放在内容本身。主菜单按字母与功能分区，每个板块都有简要说明。如果你对冗杂的界面感到疲惫，这种风格可能会让你觉得舒服。</p>
+        <span class="tag">简洁 · 低干扰</span>
+      </div>
+      <div class="feature-card">
+        <h3>访问前的准备</h3>
+        <p>不需要特殊网络设置或工具，保持浏览器为常用版本即可。建议使用电脑或平板访问以获得完整布局，手机也能正常浏览。可以收藏地址方便下次直接跳转。</p>
+        <span class="tag">无门槛 · 跨设备</span>
+      </div>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="faq-summary">
+      <h2>常见疑问 · 简短摘要</h2>
+      <div class="faq-item">
+        <strong>欧博是免费的吗？</strong>
+        <p>是的，目前站内所有基础板块对访客免费开放，没有隐藏费用或强制订阅。</p>
+      </div>
+      <div class="faq-item">
+        <strong>需要注册账号吗？</strong>
+        <p>浏览内容无需注册。部分互动功能（如收藏或备注）可能建议创建账号，但完全自愿。</p>
+      </div>
+      <div class="faq-item">
+        <strong>信息更新频率如何？</strong>
+        <p>维护团队会按周更新索引与资源列表，保证链接有效性与内容时效。但具体到每个条目，建议以页面标注日期为准。</p>
+      </div>
+      <hr>
+      <p style="color:#55657a; font-size:0.95rem;">更多细节可以直接在站点内找到对应说明，或者通过页面底部链接亲自感受。</p>
+    </div>
+
+    <!-- 页尾访问提示（自然嵌入链接） -->
+    <div class="footer-access">
+      <p>如果你想直接开始，现在就可以前往 <a href="https://site-aobo.com">欧博</a> 看看它的实际模样。</p>
+      <p style="margin-top: 0.6rem; font-size: 0.95rem; color:#55657a;">无需注册，也没有强制引导。页面的每个板块都等待你自由探索。</p>
+      <div class="big-link-sentence">
+        从导航栏到内容区，<a href="https://site-aobo.com">欧博</a> 的架构一目了然。
+      </div>
+      <p style="margin-top: 1.2rem; font-size: 0.9rem; color:#7a879a;">本页仅为介绍与提醒，不构成任何形式推荐。</p>
+    </div>
+  </div>
+</body>
+</html>
